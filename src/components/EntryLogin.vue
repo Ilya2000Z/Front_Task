@@ -25,7 +25,7 @@
                 const LoginInput = document.getElementById("1") as HTMLInputElement
                 const PasswordInput = document.getElementById("2") as HTMLInputElement
                 Chek(LoginInput.value,PasswordInput.value)
-                router.push('/login')           
+                router.push('/welcome')           
             }
          }
     })

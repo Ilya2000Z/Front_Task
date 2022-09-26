@@ -16,7 +16,7 @@
         methods:{
             logout(){
                 Chek("logout","logout")
-                router.push('/')
+                router.push('/login')
             }
         }
     })
