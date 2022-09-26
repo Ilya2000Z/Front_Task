@@ -2,9 +2,9 @@
     <div>
         <div class="container">
             <label>login</label>
-                <input id="1" v-on:change="event=>setValue(event)"/>
+                <input id="1"/>
             <label>Password</label>
-                <input id="2" v-on:change="event=>setValue(event)"/>
+                <input id="2"/>
             <div class="button">
                 <button  v-on:click="checkLogin()">login</button>
             </div>
@@ -16,20 +16,16 @@
     import { defineComponent } from 'vue';
     import {useCounterStor} from '../stores/store'
     import router from '../router'
+    import {Chek} from '../server'
     const useStore = useCounterStor()
     export default defineComponent({
          name:"EntryLogin",
          methods:{
-            setValue(a:Event){
-                if((a.target as HTMLInputElement).id=="1"){
-                useStore.setLogin((a.target as HTMLInputElement).value)
-            } else{
-                useStore.setPassword((a.target as HTMLInputElement).value)
-                }
-            },
             checkLogin(){
-                useStore.checkLogin()
-                router.push("/login")
+                const LoginInput = document.getElementById("1") as HTMLInputElement
+                const PasswordInput = document.getElementById("2") as HTMLInputElement
+                Chek(LoginInput.value,PasswordInput.value)
+                router.push('/login')           
             }
          }
     })

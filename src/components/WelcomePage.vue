@@ -9,12 +9,13 @@
      import { defineComponent } from 'vue';
      import {useCounterStor} from '../stores/store'
      import router from '../router'
+     import {Chek} from '../server'
     const useStore = useCounterStor()
     export default defineComponent({
         name:"WelcomePage",
         methods:{
             logout(){
-                useStore.logout()
+                Chek("logout","logout")
                 router.push('/')
             }
         }
