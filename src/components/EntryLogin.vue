@@ -14,10 +14,10 @@
 
 <script lang="ts">
     import { defineComponent } from 'vue';
-    import {useCounterStor} from '../stores/store'
+    import {useStore} from '../stores/store'
     import router from '../router'
     import {Chek} from '../server'
-    const useStore = useCounterStor()
+    const Store = useStore()
     export default defineComponent({
          name:"EntryLogin",
          methods:{
